@@ -31,13 +31,19 @@ class TagForm(forms.Form):
     def clean(self):
         cleaned_data = super(TagForm, self).clean()
 
-        try:
-            Model = get_model(cleaned_data['app_label'], cleaned_data['model_name'])
-        except LookupError as e:
-            raise ValidationError(e.message)
+        app_label = cleaned_data.get('app_label')
+        model_name = cleaned_data.get('model_name')
+        object_id = cleaned_data.get('object_id')
+        if not (app_label and model_name and object_id):
+            raise ValidationError('unable to specify the object.')
 
         try:
-            obj = Model._default_manager.get(pk=cleaned_data['object_id'])
+            Model = get_model(app_label, model_name)
+        except LookupError as e:
+            raise ValidationError(e)
+
+        try:
+            obj = Model._default_manager.get(pk=object_id)
         except Model.DoesNotExist:
             raise ValidationError('object does not exist')
 
