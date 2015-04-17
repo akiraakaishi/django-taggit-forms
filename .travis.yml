@@ -8,5 +8,8 @@ env:
   - TOXENV=py34-1.8.x
 install:
   - pip install tox
+  - pip install coveralls
 script:
-  - tox -e $TOXENV
+  - coverage run --source=taggit_forms tox -e $TOXENV
+after_success:
+  coveralls
