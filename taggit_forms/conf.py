@@ -1,5 +1,9 @@
 from django.conf import settings as django_settings
-from django.core.signals import setting_changed
+
+try:
+    from django.core.signals import setting_changed
+except ImportError:
+    from django.test.signals import setting_changed
 
 TAGGIT_FORMS = {
     'URL_NAMESPACE': 'taggit_forms',
