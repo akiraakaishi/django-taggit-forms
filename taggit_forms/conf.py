@@ -13,6 +13,7 @@ TAGGIT_FORMS = {
     'TEMPLATE_NAME': 'taggit_forms/form.html',
 }
 
+
 class Settings(object):
     FIXED_SETTINGS = ('VIEW_NAME', )
 
@@ -32,6 +33,7 @@ class Settings(object):
         raise AttributeError
 
 settings = Settings(TAGGIT_FORMS)
+
 
 def update_settings(*args, **kwargs):
     if kwargs['setting'] == 'TAGGIT_FORMS':

@@ -4,6 +4,7 @@ from taggit_forms.forms import TagForm
 from taggit_forms.utils import create_tag_for_object
 from taggit_forms.conf import settings
 
+
 def tag_create_view(request, *args, **kwargs):
     if request.method not in settings.ALLOWED_METHODS:
         return http.HttpResponseNotAllowed(settings.ALLOWED_METHODS)

@@ -17,6 +17,8 @@ class TagForm(forms.Form):
     model_name = forms.CharField(required=True, widget=forms.HiddenInput())
     object_id = forms.CharField(required=True, widget=forms.HiddenInput())
 
+    _obj = None
+
     def __init__(self, *args, **kwargs):
         target = kwargs.pop('target', None)
         if target is not None:
@@ -27,7 +29,6 @@ class TagForm(forms.Form):
             kwargs['initial'] = initial
         super(TagForm, self).__init__(*args, **kwargs)
 
-    _obj = None
     def clean(self):
         cleaned_data = super(TagForm, self).clean()
 

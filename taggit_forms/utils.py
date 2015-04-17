@@ -2,6 +2,7 @@ from django.contrib.contenttypes.models import ContentType
 
 from taggit.models import Tag, TaggedItem
 
+
 def create_tag_for_object(tag_name, obj):
     tag, tag_created = Tag.objects.get_or_create(name=tag_name)
     content_type = ContentType.objects.get_for_model(obj._meta.model)
