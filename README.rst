@@ -3,7 +3,7 @@ django-taggit-forms
 =============
 
 .. image:: https://pypip.in/version/django-taggit-forms/badge.svg
-    :target: https://pypip.in/version/django-taggit-forms/badge.svg
+    :target: https://pypi.python.org/pypi/django-taggit-forms
 
 .. image:: https://travis-ci.org/akiraakaishi/django-taggit-forms.svg?branch=master
     :target: https://travis-ci.org/akiraakaishi/django-taggit-forms
