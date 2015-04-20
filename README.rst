@@ -41,7 +41,7 @@ Then, create your model to be tagged with:
 
 Then, in your templates, render a tag-creation form for an instance of ``MyModel`` with the template tag ``render_tag_form``::
 
-    {% load taggitforms%}
+    {% load taggitforms %}
     {% render_tag_form my_obj %}
 
 The form is rendered with the template ``taggit_forms/form.html``.
