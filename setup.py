@@ -1,5 +1,5 @@
 import os
-from setuptools import setup
+from setuptools import setup, find_packages
 
 with open(os.path.join(os.path.dirname(__file__), 'README.rst')) as readme:
     README = readme.read()
@@ -11,7 +11,7 @@ import taggit_forms
 setup(
     name='django-taggit-forms',
     version='.'.join(map(str, taggit_forms.VERSION)),
-    packages=['taggit_forms'],
+    packages=find_packages(exclude=['tests*']),
     include_package_data=True,
     license='MIT License',
     description='Tag-creation forms for django-taggit',
