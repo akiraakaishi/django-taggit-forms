@@ -2,6 +2,9 @@
 django-taggit-forms
 =============
 
+.. image:: https://pypip.in/version/django-taggit-forms/badge.svg
+    :target: https://pypi.python.org/pypi/django-taggit-forms
+
 .. image:: https://travis-ci.org/akiraakaishi/django-taggit-forms.svg?branch=master
     :target: https://travis-ci.org/akiraakaishi/django-taggit-forms
 
@@ -38,7 +41,7 @@ Then, create your model to be tagged with:
 
 Then, in your templates, render a tag-creation form for an instance of ``MyModel`` with the template tag ``render_tag_form``::
 
-    {% load taggitforms%}
+    {% load taggitforms %}
     {% render_tag_form my_obj %}
 
 The form is rendered with the template ``taggit_forms/form.html``.
